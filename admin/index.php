@@ -26,10 +26,7 @@ if(empty($_SESSION['admin_name']))
 </form>
 
 
-<!--
-	Кода по на доло извършва проверка дали потребител съществува в база дани
-    ако съществува създава сессия за него 
---->
+
 <?php
 
 if(!empty($_POST))
@@ -44,7 +41,7 @@ if(!empty($_POST))
 	$res = mysql_query($sql);
 	$rows = mysql_num_rows($res);
 	$values = mysql_fetch_array($res);
-	// ако върнат резултат не е празен създаваме сессия за потребителя
+
 	
 	if($rows)
 	{
@@ -68,10 +65,6 @@ if(!empty($_POST))
 		$class = 'main';
 	}
 	
-	
-	/*
-		** Проверка за съществуващ файл ако няма такъв изваждаме грешка
-	*/
 	if(file_exists('classes/'.$class.'.php')){
 		include 'classes/'.$class.".php";
 		
